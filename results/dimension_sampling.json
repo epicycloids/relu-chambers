@@ -1,0 +1,96 @@
+{
+  "n": 50,
+  "k": 2,
+  "lam": 0.05,
+  "budget": 40,
+  "rows": [
+    {
+      "d": 2,
+      "solid_angle": 0.012548333333333333,
+      "solid_angle_std": 0.004991620200117616,
+      "margin": 0.019549759371014542,
+      "adaptive_objective": 0.09994709871668289,
+      "adaptive_objective_std": 0.012795596531263994,
+      "sampling_objective": 0.10119382533370021,
+      "sampling_objective_std": 0.012483818622553912,
+      "sampling_directions": 2000.0
+    },
+    {
+      "d": 3,
+      "solid_angle": 0.0010383333333333334,
+      "solid_angle_std": 0.0003491020226555874,
+      "margin": 0.006098272084779769,
+      "adaptive_objective": 0.1009685318080308,
+      "adaptive_objective_std": 0.0009059155491254335,
+      "sampling_objective": 0.13041976405704644,
+      "sampling_objective_std": 0.034742123859360034,
+      "sampling_directions": 2000.0
+    },
+    {
+      "d": 4,
+      "solid_angle": 0.000165,
+      "solid_angle_std": 0.00011683321445547924,
+      "margin": 0.013212335721572342,
+      "adaptive_objective": 0.0998326580754474,
+      "adaptive_objective_std": 0.012357661167898812,
+      "sampling_objective": 0.19306154637153605,
+      "sampling_objective_std": 0.030663862531839434,
+      "sampling_directions": 2000.0
+    },
+    {
+      "d": 6,
+      "solid_angle": 1.1666666666666668e-05,
+      "solid_angle_std": 1.0274023338281628e-05,
+      "margin": 0.004323195574431014,
+      "adaptive_objective": 0.09317590629874857,
+      "adaptive_objective_std": 0.009318395189055912,
+      "sampling_objective": 0.2171551567573792,
+      "sampling_objective_std": 0.03526636200338253,
+      "sampling_directions": 2000.0
+    },
+    {
+      "d": 8,
+      "solid_angle": 0.0,
+      "solid_angle_std": 0.0,
+      "margin": 0.0077646301544454545,
+      "adaptive_objective": 0.08937384192111893,
+      "adaptive_objective_std": 0.008142763098221938,
+      "sampling_objective": 0.21392871366744895,
+      "sampling_objective_std": 0.021662905111485456,
+      "sampling_directions": 2000.0
+    },
+    {
+      "d": 10,
+      "solid_angle": 0.0,
+      "solid_angle_std": 0.0,
+      "margin": 0.007086545224464304,
+      "adaptive_objective": 0.08948441811719104,
+      "adaptive_objective_std": 0.011975565580826585,
+      "sampling_objective": 0.15984900798121884,
+      "sampling_objective_std": 0.03723143739471201,
+      "sampling_directions": 2000.0
+    },
+    {
+      "d": 12,
+      "solid_angle": 0.0,
+      "solid_angle_std": 0.0,
+      "margin": 0.0028407669079881207,
+      "adaptive_objective": 0.11164220795648194,
+      "adaptive_objective_std": 0.005203949689153429,
+      "sampling_objective": 0.18278085796592772,
+      "sampling_objective_std": 0.015741028542388937,
+      "sampling_directions": 2000.0
+    },
+    {
+      "d": 16,
+      "solid_angle": 0.0,
+      "solid_angle_std": 0.0,
+      "margin": 0.001508047111261375,
+      "adaptive_objective": 0.08767514794627407,
+      "adaptive_objective_std": 0.006298560154399042,
+      "sampling_objective": 0.13124742211378843,
+      "sampling_objective_std": 0.00977030308841942,
+      "sampling_directions": 2000.0
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "device": "cuda",
+    "n": 1000000,
+    "objective": 0.25349987885961883,
+    "teacher_objective": 0.2533327679888613,
+    "wall_seconds": 115.36559271812439,
+    "iterations": 60,
+    "active_atoms": 8,
+    "price_over_lambda": 2.8786710288516564,
+    "heuristic_gap": 0.1653709288406265,
+    "stop_reason": "max_iter",
+    "timings": {
+      "master": 14.4,
+      "gated": 40.1,
+      "price": 47.3,
+      "cert": 7.0,
+      "other": 0.8,
+      "verify": 2.7
+    }
+  },
+  {
+    "device": "cpu",
+    "n": 1000000,
+    "objective": 0.25346422869171725,
+    "teacher_objective": 0.2533327679888613,
+    "wall_seconds": 109.38904809951782,
+    "iterations": 60,
+    "active_atoms": 12,
+    "price_over_lambda": 3.772026984342412,
+    "heuristic_gap": 0.1862179420818749,
+    "stop_reason": "max_iter",
+    "timings": {
+      "master": 4.4,
+      "gated": 41.5,
+      "price": 39.6,
+      "cert": 4.7,
+      "other": 7.6,
+      "verify": 2.5
+    }
+  }
+]

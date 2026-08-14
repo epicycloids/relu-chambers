@@ -1,0 +1,21 @@
+{
+  "n": 2000000,
+  "objective": 0.2886661784044258,
+  "teacher_objective": 0.28829194309128786,
+  "relative_excess": 0.0012981122855017099,
+  "wall_seconds": 173.452810049057,
+  "iterations": 60,
+  "active_atoms": 8,
+  "price_over_lambda": 6.431673264091486,
+  "heuristic_gap": 0.2436987105149362,
+  "bound_gap": 0.26518165202261534,
+  "stop_reason": "max_iter",
+  "timings": {
+    "master": 8.913352727890015,
+    "gated": 71.63271284103394,
+    "price": 51.441433906555176,
+    "cert": 8.410746335983276,
+    "other": 12.946832180023193,
+    "verify": 3.314647912979126
+  }
+}

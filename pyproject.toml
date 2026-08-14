@@ -1,0 +1,31 @@
+[project]
+name = "relu-chambers"
+version = "0.1.0"
+description = "Residual-adaptive column generation for scalar-output two-layer ReLU fitting"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Logan Bell" },
+]
+license = "MIT"
+dependencies = [
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+experiments = [
+    "matplotlib>=3.6",
+    "cvxpy>=1.4",
+    "scikit-learn>=1.7.2",
+]
+
+[project.urls]
+Paper = "https://github.com/epicycloids/relu-chambers/blob/main/paper/main.pdf"
+Repository = "https://github.com/epicycloids/relu-chambers"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["relu_chambers"]

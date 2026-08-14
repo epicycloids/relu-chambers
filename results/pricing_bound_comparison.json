@@ -1,0 +1,76 @@
+[
+  {
+    "exact_price": 4.224844296741953,
+    "positive_part_bound": 10.474207695201274,
+    "absolute_residual_bound": 28.693570295891668,
+    "valid": true
+  },
+  {
+    "exact_price": 5.256626138908427,
+    "positive_part_bound": 13.145402064052307,
+    "absolute_residual_bound": 38.779202006379904,
+    "valid": true
+  },
+  {
+    "exact_price": 5.671713226439737,
+    "positive_part_bound": 11.87235868688862,
+    "absolute_residual_bound": 28.920412367734947,
+    "valid": true
+  },
+  {
+    "exact_price": 8.01499816496441,
+    "positive_part_bound": 15.282602636444823,
+    "absolute_residual_bound": 29.208958382560233,
+    "valid": true
+  },
+  {
+    "exact_price": 8.885941044911528,
+    "positive_part_bound": 13.121231949209218,
+    "absolute_residual_bound": 30.20699934697238,
+    "valid": true
+  },
+  {
+    "exact_price": 11.554179636932172,
+    "positive_part_bound": 16.44903152411472,
+    "absolute_residual_bound": 33.31911629918219,
+    "valid": true
+  },
+  {
+    "exact_price": 12.562761937919,
+    "positive_part_bound": 20.693124568717327,
+    "absolute_residual_bound": 28.755845250809934,
+    "valid": true
+  },
+  {
+    "exact_price": 10.580069852313446,
+    "positive_part_bound": 17.632517611931416,
+    "absolute_residual_bound": 32.66050910403139,
+    "valid": true
+  },
+  {
+    "exact_price": 12.965574938582314,
+    "positive_part_bound": 19.528650928548668,
+    "absolute_residual_bound": 37.39012792680043,
+    "valid": true
+  },
+  {
+    "exact_price": 11.120226823088148,
+    "positive_part_bound": 18.292102476612545,
+    "absolute_residual_bound": 30.316790502149185,
+    "valid": true
+  },
+  {
+    "n": 2000,
+    "d": 16,
+    "kind": "midrun",
+    "positive_part_bound": 851.1290191802802,
+    "absolute_residual_bound": 918.535329234936
+  },
+  {
+    "n": 20000,
+    "d": 16,
+    "kind": "midrun",
+    "positive_part_bound": 6667.415324243021,
+    "absolute_residual_bound": 7279.873906488594
+  }
+]

@@ -1,0 +1,36 @@
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.coverage
+.pytest_cache/
+.ruff_cache/
+
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+
+# Local dataset cache.
+data_cache/
+
+# Generated figure outputs; retain the manuscript inputs.
+paper/figures/*
+!paper/figures/bisection_construction.pdf
+!paper/figures/chamber_arrangement.pdf
+!paper/figures/dimension_sampling.pdf
+!paper/figures/real_data_comparison.pdf
+!paper/figures/runtime_breakdown.pdf

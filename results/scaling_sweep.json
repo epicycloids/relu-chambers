@@ -1,0 +1,83 @@
+[
+  {
+    "n": 20000,
+    "objective": 0.30740002034816416,
+    "teacher_objective": 0.30738359095583356,
+    "relative_excess": 5.3449152179881926e-05,
+    "wall_seconds": 24.79073405265808,
+    "iterations": 41,
+    "active_atoms": 8,
+    "price_over_lambda": 1.0026134605086483,
+    "heuristic_gap": 0.0007992670730672669,
+    "bound_gap": 0.10159566953188814,
+    "timings": {
+      "master": 0.06809091567993164,
+      "gated": 7.243095636367798,
+      "price": 16.06529402732849,
+      "cert": 0.35422348976135254,
+      "other": 0.02985382080078125,
+      "verify": 0.9346885681152344
+    }
+  },
+  {
+    "n": 100000,
+    "objective": 0.3140763634706092,
+    "teacher_objective": 0.31406425019742407,
+    "relative_excess": 3.8569411123701356e-05,
+    "wall_seconds": 50.017391204833984,
+    "iterations": 60,
+    "active_atoms": 7,
+    "price_over_lambda": 1.0203758465996382,
+    "heuristic_gap": 0.006257479194360593,
+    "bound_gap": 0.11417230717221027,
+    "timings": {
+      "master": 0.31224703788757324,
+      "gated": 13.99172067642212,
+      "price": 32.32036280632019,
+      "cert": 1.4004642963409424,
+      "other": 0.2097635269165039,
+      "verify": 1.4856147766113281
+    }
+  },
+  {
+    "n": 500000,
+    "objective": 0.26803531489147775,
+    "teacher_objective": 0.2679467744280953,
+    "relative_excess": 0.00033044048980044574,
+    "wall_seconds": 75.05944204330444,
+    "iterations": 60,
+    "active_atoms": 6,
+    "price_over_lambda": 1.5469886253826661,
+    "heuristic_gap": 0.09472641824145961,
+    "bound_gap": 0.1900993809446555,
+    "timings": {
+      "master": 2.033677577972412,
+      "gated": 22.8410427570343,
+      "price": 39.49789333343506,
+      "cert": 3.16559100151062,
+      "other": 2.015347480773926,
+      "verify": 1.9950768947601318
+    }
+  },
+  {
+    "n": 1000000,
+    "objective": 0.253517,
+    "teacher_objective": 0.253333,
+    "relative_excess": 0.00073,
+    "wall_seconds": 123.0,
+    "iterations": 60,
+    "active_atoms": 5,
+    "price_over_lambda": 3.34,
+    "heuristic_gap": 0.178,
+    "bound_gap": 0.2166,
+    "timings": {
+      "master": 5,
+      "gated": 52,
+      "price": 45,
+      "cert": 5,
+      "other": 5,
+      "verify": 2
+    },
+    "note": "self-tuning gated sketch"
+  }
+]
