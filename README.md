@@ -11,12 +11,12 @@ The accompanying manuscript is available as
 
 The code fits
 
-\[
+$$
 \min_{P,\alpha,u_j}
 \frac12\left\lVert\sum_{j=1}^P \alpha_j(Xu_j)_+-y\right\rVert_2^2
 +\lambda\sum_{j=1}^P|\alpha_j|,
 \qquad \lVert u_j\rVert_2\le 1.
-\]
+$$
 
 The signed ReLU atoms form a convex atomic-gauge problem. The paper's ideal
 column-generation analysis assumes an exact restricted-master solve and exact
