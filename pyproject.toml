@@ -20,7 +20,7 @@ experiments = [
 ]
 
 [project.urls]
-Paper = "https://github.com/epicycloids/relu-chambers/blob/main/paper/main.pdf"
+Paper = "https://github.com/epicycloids/relu-chambers/releases/latest/download/relu-chambers.pdf"
 Repository = "https://github.com/epicycloids/relu-chambers"
 
 [build-system]

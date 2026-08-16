@@ -1,0 +1,95 @@
+name: Paper
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Validate and build paper
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+        with:
+          version: "0.11.32"
+
+      - name: Install Tectonic 0.15.0
+        shell: bash
+        run: |
+          set -euo pipefail
+          tectonic_tmp="$(mktemp -d)"
+          tectonic_archive="${tectonic_tmp}/tectonic.tar.gz"
+          curl --fail --location --proto '=https' --tlsv1.2 --retry 3 \
+            --output "${tectonic_archive}" \
+            "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.15.0/tectonic-0.15.0-x86_64-unknown-linux-gnu.tar.gz"
+          echo "875fbbc9ab48560d7776088c608e0beee49197b57ab4a2f6c5385b2c661c842f  ${tectonic_archive}" | sha256sum --check --strict
+          tar --extract --gzip --file "${tectonic_archive}" --directory "${tectonic_tmp}"
+          sudo install -m 0755 "${tectonic_tmp}/tectonic" /usr/local/bin/tectonic
+          tectonic --version
+
+      - name: Sync locked experiment environment
+        run: uv sync --locked --extra experiments
+
+      - name: Run fast validation
+        run: |
+          uv run python -m tests.test_solver
+          uv run python -m tests.test_data_engine
+          uv run python -m tests.test_pricing_bounds
+          uv run python -m experiments.controlled_benchmark --self-test
+          uv run python -m experiments.candidate_order --self-check-only
+
+      - name: Regenerate paper figures
+        run: uv run python -m experiments.paper_figures
+
+      - name: Build paper
+        run: |
+          mkdir -p dist
+          tectonic --outdir dist paper/main.tex
+          mv dist/main.pdf dist/relu-chambers.pdf
+          test -s dist/relu-chambers.pdf
+
+      - name: Upload paper artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: relu-chambers-paper
+          path: dist/relu-chambers.pdf
+          if-no-files-found: error
+          retention-days: 14
+
+  release:
+    name: Publish tagged paper
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Download paper artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: relu-chambers-paper
+          path: dist
+
+      - name: Create release and publish paper
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if ! gh release view "${RELEASE_TAG}" >/dev/null 2>&1; then
+            gh release create "${RELEASE_TAG}" --verify-tag --title "${RELEASE_TAG}" --generate-notes
+          fi
+          gh release upload "${RELEASE_TAG}" dist/relu-chambers.pdf --clobber

@@ -1,11 +1,13 @@
 # Residual-Adaptive Column Generation for Two-Layer ReLU Fitting
 
+[![Paper CI](https://github.com/epicycloids/relu-chambers/actions/workflows/paper.yml/badge.svg)](https://github.com/epicycloids/relu-chambers/actions/workflows/paper.yml)
+
 This repository contains the paper, implementation, experiment drivers, and
 result records for scalar-output, fully connected two-layer ReLU fitting by
 residual-adaptive column generation (RCG).
 
-The accompanying manuscript is available as
-[`paper/main.pdf`](paper/main.pdf), with source in [`paper/main.tex`](paper/main.tex).
+**[Paper (PDF)](https://github.com/epicycloids/relu-chambers/releases/latest/download/relu-chambers.pdf)**
+is available with its [LaTeX source](paper/main.tex).
 
 ## Problem and implementation status
 
@@ -129,6 +131,11 @@ measured repeats, one warm-up, and `--final-verify`; runs above 10,000 rows also
 require `--large`.
 
 ## Paper and experiments
+
+The Paper CI workflow validates the code, regenerates the figures, and builds
+the PDF on pushes to `main` and on pull requests; each run retains
+`relu-chambers.pdf` as a workflow artifact. Pushing a tag matching `v*` also
+publishes that exact PDF as a GitHub Release asset.
 
 Build the paper with Tectonic:
 
