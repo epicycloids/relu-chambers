@@ -12,6 +12,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: paper-${{ github.repository }}
+  cancel-in-progress: false
+
 jobs:
   build:
     name: Validate and build paper
@@ -39,6 +43,12 @@ jobs:
           sudo install -m 0755 "${tectonic_tmp}/tectonic" /usr/local/bin/tectonic
           tectonic --version
 
+      - name: Cache Tectonic resource bundle
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/Tectonic
+          key: tectonic-0.15.0-${{ runner.os }}-${{ runner.arch }}-default-bundle-v33
+
       - name: Sync locked experiment environment
         run: uv sync --locked --extra experiments
 
@@ -55,8 +65,17 @@ jobs:
 
       - name: Build paper
         run: |
+          set -euo pipefail
           mkdir -p dist
-          tectonic --outdir dist paper/main.tex
+          for attempt in 1 2 3; do
+            if tectonic --outdir dist paper/main.tex; then
+              break
+            fi
+            if [ "${attempt}" -eq 3 ]; then
+              exit 1
+            fi
+            sleep "$((attempt * 20))"
+          done
           mv dist/main.pdf dist/relu-chambers.pdf
           test -s dist/relu-chambers.pdf
 
